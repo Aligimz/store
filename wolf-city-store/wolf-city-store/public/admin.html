@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>لوحة التحكم</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#0a0c11;color:#eef0f7;font-family:Cairo,Tahoma,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:#12151d;border-bottom:1px solid #242a3b}
+main{max-width:1000px;margin:0 auto;padding:16px}.tabs{display:flex;gap:8px;margin-bottom:14px}
+button,select,input,textarea{font:inherit;color:inherit;background:#171b28;border:1px solid #2a3147;border-radius:9px;padding:8px 10px}
+button{cursor:pointer;background:#ff7a1a;border:0;font-weight:700;color:#fff}button.g{background:#171b28;border:1px solid #2a3147}button.d{background:#c93a3f}
+.c{background:#12151d;border:1px solid #242a3b;border-radius:14px;padding:12px;margin-bottom:10px}
+.r{display:flex;gap:6px;flex-wrap:wrap;align-items:center;background:#12151d;border:1px solid #242a3b;border-radius:12px;padding:10px;margin-bottom:8px}.r input[data-k=d]{flex:1;min-width:160px}
+.st{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}.st div{background:#12151d;border:1px solid #242a3b;border-radius:12px;padding:10px 16px}
+.m{color:#99a0b8;font-size:.85rem}#login{max-width:340px;margin:80px auto;display:grid;gap:10px}textarea{width:100%;min-height:200px;direction:ltr;font-family:monospace;font-size:.8rem}label{display:block;margin:8px 0 3px;color:#99a0b8;font-size:.85rem}.f input{width:100%}</style></head>
+<body><div id="login" style="display:none"><h2>🐺 دخول الأدمن</h2><input id="pw" type="password" placeholder="كلمة المرور"><button id="lg">دخول</button></div>
+<div id="app" style="display:none"><header><b>🐺 لوحة تحكم المتجر</b><span><a href="/" style="color:#ff7a1a">المتجر</a> <button class="g" id="out">خروج</button></span></header>
+<main><div class="tabs"><button data-t="orders">الطلبات</button><button class="g" data-t="products">المنتجات</button><button class="g" data-t="settings">الإعدادات والدفع</button></div><div id="v"></div></main></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const CATS={vip:'VIP',money:'باقات المال',cars:'السيارات',menu:'المنيو',nick:'نك نيم',skin:'السكنات',house:'المقرات'},ST={pending:'قيد المراجعة',paid:'تم الدفع',done:'تم التفعيل',rejected:'مرفوض'};
+let T=sessionStorage.t||'',tab='orders';
+async function api(u,m='GET',b){const r=await fetch('/api/admin'+u,{method:m,headers:{'Content-Type':'application/json','x-token':T},body:b?JSON.stringify(b):undefined});if(r.status===401){T='';sessionStorage.t='';show();throw 0}return r.json()}
+function show(){$('#login').style.display=T?'none':'grid';$('#app').style.display=T?'block':'none';if(T)go(tab)}
+$('#lg').onclick=async()=>{const r=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:$('#pw').value})});if(r.ok){T=(await r.json()).token;sessionStorage.t=T;show()}else alert(r.status==429?'محاولات كثيرة، انتظر':'كلمة المرور خاطئة')};
+$('#out').onclick=()=>{T='';sessionStorage.t='';show()};
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>go(b.dataset.t));
+async function go(t){tab=t;document.querySelectorAll('[data-t]').forEach(b=>b.className=b.dataset.t===t?'':'g');const v=$('#v');
+ if(t==='orders'){const o=await api('/orders'),n=x=>o.filter(i=>i.status===x).length;
+  v.innerHTML=`<div class="st"><div>الكل<b> ${o.length}</b></div><div>قيد المراجعة<b> ${n('pending')}</b></div><div>تم التفعيل<b> ${n('done')}</b></div><div>المبيعات المفعّلة<b> ${o.filter(i=>i.status==='done').reduce((a,i)=>a+i.total,0).toLocaleString('en-US')}</b></div></div>`+(o.map(i=>`<div class="c"><b>${i.id}</b> <span class="m">${new Date(i.at).toLocaleString('ar-IQ')}</span><br>اللاعب: ${esc(i.name)} | ديسكورد: ${esc(i.dc)} | ${esc(i.method)}<br>${i.items.map(x=>esc(x.n)).join('، ')} — <b>${i.total.toLocaleString('en-US')}</b><br><select data-o="${i.id}">${Object.entries(ST).map(([k,l])=>`<option value="${k}" ${k===i.status?'selected':''}>${l}</option>`)}</select></div>`).join('')||'<p class="m">لا توجد طلبات بعد</p>');
+  v.querySelectorAll('[data-o]').forEach(s=>s.onchange=()=>api('/orders/'+s.dataset.o,'PATCH',{status:s.value}).then(()=>go('orders')))}
+ if(t==='products'){const p=await api('/products');
+  v.innerHTML='<button id="add">+ منتج جديد</button><br><br>'+p.map(x=>`<div class="r" data-id="${x.id}"><input data-k="ic" value="${esc(x.ic)}" size="2"><input data-k="n" value="${esc(x.n)}"><select data-k="c">${Object.entries(CATS).map(([k,l])=>`<option value="${k}" ${k===x.c?'selected':''}>${l}</option>`)}</select><input data-k="p" type="number" value="${x.p}" style="width:110px"><input data-k="d" value="${esc(x.d)}"><label style="margin:0"><input data-k="on" type="checkbox" ${x.on!==false?'checked':''}> فعّال</label><button data-a="s">حفظ</button><button class="d" data-a="x">حذف</button></div>`).join('');
+  $('#add').onclick=()=>api('/products','POST',{}).then(()=>go('products'));
+  v.querySelectorAll('[data-a]').forEach(b=>b.onclick=async()=>{const r=b.closest('.r'),id=r.dataset.id;if(b.dataset.a==='x'){if(confirm('حذف المنتج؟'))await api('/products/'+id,'DELETE');return go('products')}
+   const d={};r.querySelectorAll('[data-k]').forEach(i=>d[i.dataset.k]=i.type==='checkbox'?i.checked:i.value);await api('/products/'+id,'PUT',d);b.textContent='تم ✓'})}
+ if(t==='settings'){const s=await api('/settings');
+  v.innerHTML=`<div class="c f"><label>اسم السيرفر</label><input id="sn" value="${esc(s.name)}"><label>رابط الديسكورد</label><input id="sd" value="${esc(s.discord)}"><label>رقم الواتساب (بدون +)</label><input id="sw" value="${esc(s.wa)}"><label>طرق الدفع (JSON: id, n, ic, info)</label><textarea id="sp">${esc(JSON.stringify(s.pay,null,1))}</textarea><br><br><button id="sv">حفظ الإعدادات</button></div>`;
+  $('#sv').onclick=async()=>{let pay;try{pay=JSON.parse($('#sp').value)}catch{return alert('صيغة JSON غير صحيحة')}await api('/settings','PUT',{name:$('#sn').value,discord:$('#sd').value,wa:$('#sw').value,pay});$('#sv').textContent='تم الحفظ ✓'}}}
+show();
+</script></body></html>

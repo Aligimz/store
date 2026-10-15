@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>𝗪𝗢𝗟𝗙 𝗖𝗜𝗧𝗬 𝗥𝗣 | المتجر الرسمي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f5f9;--bg2:#eceef5;--card:#fff;--text:#11141c;--muted:#656a80;--line:#dfe2ed;--ac:#e8620c;--ac2:#0b8fc7;--ok:#13a36b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0c11;--bg2:#0f121a;--card:#141824;--text:#eef0f7;--muted:#99a0b8;--line:#242a3b;--ac:#ff7a1a;--ac2:#38bdf8;--ok:#2fd79a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0c11;--bg2:#0f121a;--card:#141824;--text:#eef0f7;--muted:#99a0b8;--line:#242a3b;--ac:#ff7a1a;--ac2:#38bdf8;--ok:#2fd79a;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Cairo',Tahoma,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;letter-spacing:.5px;display:flex;align-items:center;gap:8px}.logo i{font-style:normal;background:linear-gradient(135deg,var(--ac),#ffb347);border-radius:10px;padding:2px 7px}
+.links{display:flex;gap:18px;font-weight:600;font-size:.92rem}.links a{color:var(--muted)}.links a:hover{color:var(--ac)}
+.btn{border:0;background:linear-gradient(135deg,var(--ac),#ff9a3c);color:#fff;padding:10px 18px;border-radius:12px;font:inherit;font-weight:700;cursor:pointer;display:inline-block;text-align:center}
+.btn.g{background:var(--card);color:var(--text);border:1px solid var(--line)}.btn.w{width:100%}.btn:disabled{opacity:.45;cursor:not-allowed}
+.hero{text-align:center;padding:70px 18px 56px;background:radial-gradient(600px 300px at 50% 0,color-mix(in srgb,var(--ac) 24%,transparent),transparent),var(--bg2);border-bottom:1px solid var(--line)}
+.pill{display:inline-block;border:1px solid var(--line);background:var(--card);padding:4px 14px;border-radius:99px;font-size:.8rem;color:var(--ac);font-weight:700}
+.hero h1{margin:14px 0 8px;font-size:clamp(2rem,7vw,3.6rem);font-weight:800;letter-spacing:1px}
+.hero p{max-width:560px;margin:0 auto 22px;color:var(--muted)}.hero .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;max-width:860px;margin:36px auto 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:.9rem}.stat b{display:block;font-size:1.05rem}
+section{max-width:1080px;margin:0 auto;padding:46px 16px}
+.kick{color:var(--ac);font-weight:800;letter-spacing:2px;font-size:.75rem;text-align:center}
+h2{text-align:center;margin:2px 0 22px;font-size:1.8rem;font-weight:800}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--text);padding:8px 18px;border-radius:99px;font:inherit;font-weight:600;cursor:pointer}
+.tab.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:14px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 18px 18px;display:flex;flex-direction:column;gap:8px;text-align:center;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--ac)}
+.card .ic{font-size:2.2rem}.card h3{margin:0;font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.86rem;flex:1}
+.badge{position:absolute;top:-11px;right:50%;transform:translateX(50%);background:#ffd166;color:#3a2a00;font-size:.72rem;font-weight:800;padding:2px 12px;border-radius:99px;white-space:nowrap}
+.price{font-weight:800;font-size:1.2rem;color:var(--ac)}
+.steps,.pays{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}.box .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ac);color:#fff;font-weight:800;margin-bottom:6px}
+.box .ic{font-size:1.8rem}.box p{margin:4px 0 0;color:var(--muted);font-size:.86rem}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px}summary{cursor:pointer;font-weight:700}details p{color:var(--muted);margin:8px 0 0}
+footer{border-top:1px solid var(--line);text-align:center;padding:26px 16px calc(90px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:.82rem}
+#cartBtn{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 8px 24px #0005;border-radius:99px;padding:12px 22px}
+#modal{position:fixed;inset:0;z-index:40;background:#000a;display:none;align-items:center;justify-content:center;padding:12px}#modal.open{display:flex}
+.sheet{background:var(--card);width:100%;max-width:520px;border-radius:20px;padding:20px;max-height:92%;overflow:auto;border:1px solid var(--line)}
+.sheet h3{margin:0 0 10px}.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.row button{background:none;border:0;color:#e5484d;cursor:pointer;font:inherit}
+.sheet input[type=text]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;margin:5px 0 8px}
+.sheet label{font-size:.82rem;color:var(--muted);font-weight:600}
+.pm{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:6px 0;cursor:pointer}.pm.on{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 10%,transparent)}
+.info{background:var(--bg2);border:1px dashed var(--ac);border-radius:12px;padding:10px 12px;font-size:.86rem;margin:8px 0;word-break:break-all}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;margin:12px 0}
+pre{white-space:pre-wrap;background:var(--bg2);border-radius:12px;padding:12px;font:inherit;font-size:.85rem;margin:8px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+@media(max-width:640px){.links{display:none}}
+body{background:radial-gradient(900px 500px at 85% -5%,color-mix(in srgb,var(--ac) 14%,transparent),transparent),radial-gradient(700px 400px at 5% 30%,color-mix(in srgb,var(--ac2) 10%,transparent),transparent),var(--bg);background-attachment:fixed}
+.hero h1{background:linear-gradient(90deg,var(--ac),#ffd166,var(--ac2),var(--ac));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}@keyframes sh{to{background-position:200% center}}
+.card{box-shadow:0 10px 30px #0003}.card:hover{box-shadow:0 14px 40px color-mix(in srgb,var(--ac) 28%,transparent)}.card .ic{filter:drop-shadow(0 4px 10px color-mix(in srgb,var(--ac) 45%,transparent))}
+.btn{box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 35%,transparent);transition:.15s}.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}.btn.g{box-shadow:none}
+.pill{animation:pl 2.4s ease-in-out infinite}@keyframes pl{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--ac) 18%,transparent)}}
+section{animation:up .6s both}@keyframes up{from{opacity:0;transform:translateY(14px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><i>🐺</i><span id="nm"></span></div>
+  <div class="links"><a href="#store">المتجر</a><a href="#pay">طرق الدفع</a><a href="#faq">الأسئلة الشائعة</a></div>
+  <a class="btn" id="dc1" target="_blank" rel="noopener">انضم للديسكورد</a>
+</nav>
+<header class="hero">
+  <span class="pill">✔ المتجر الرسمي</span>
+  <h1 id="h1"></h1>
+  <p>ادعم السيرفر واحصل على مزايا حصرية. جميع المنتجات شخصية ولا تؤثر على توازن الرول بلاي.</p>
+  <div class="acts"><a class="btn" href="#store">تصفح المتجر</a><a class="btn g" href="#pay">طرق الدفع</a></div>
+  <div class="stats">
+    <div class="stat">🔒<b>دفع آمن</b>عبر قنوات موثقة</div>
+    <div class="stat">⚡<b>تفعيل سريع</b>خلال 24 ساعة</div>
+    <div class="stat">🎧<b>دعم 24/7</b>عن طريق التذاكر</div>
+    <div class="stat">🧾<b>رقم طلب</b>لكل عملية شراء</div>
+  </div>
+</header>
+<section id="store">
+  <div class="kick">STORE</div><h2>متجر السيرفر</h2>
+  <div class="tabs" id="tabs"></div><div class="grid" id="grid"></div>
+</section>
+<section id="pay">
+  <div class="kick">PAYMENT</div><h2>طرق الدفع وخطوات الشراء</h2>
+  <div class="steps">
+    <div class="box"><span class="n">1</span><p>أضف المنتجات للسلة واكتب اسمك ومعرف الديسكورد</p></div>
+    <div class="box"><span class="n">2</span><p>اختر طريقة الدفع وحوّل المبلغ بنفس الرقم المعروض</p></div>
+    <div class="box"><span class="n">3</span><p>أرسل صورة الإيصال مع رقم الطلب في تذكرة الديسكورد</p></div>
+    <div class="box"><span class="n">4</span><p>تفعيل المنتج داخل السيرفر بعد مراجعة الإدارة</p></div>
+  </div>
+  <div class="pays" id="payList" style="margin-top:16px"></div>
+</section>
+<section id="faq">
+  <div class="kick">FAQ</div><h2>الأسئلة الشائعة</h2>
+  <details><summary>كم يستغرق تفعيل المنتج؟</summary><p>عادةً خلال 24 ساعة من تأكيد الدفع، وغالباً أسرع.</p></details>
+  <details><summary>هل يمكن استرجاع المبلغ؟</summary><p>المشتريات الرقمية غير قابلة للاسترداد بعد التفعيل. راجع الإدارة قبل الشراء عند أي استفسار.</p></details>
+  <details><summary>هل المنتجات تعطي أفضلية في الرول بلاي؟</summary><p>لا، جميع المزايا شخصية وتجميلية ولا تؤثر على توازن اللعب.</p></details>
+  <details><summary>الحساب تم حظره، هل يبقى المنتج؟</summary><p>الحظر بسبب مخالفة القوانين لا يعوّض عنه ولا يُسترد المبلغ.</p></details>
+</section>
+<footer><span id="ft"></span> © 2026 — جميع الحقوق محفوظة. هذا المتجر غير تابع لـ Rockstar Games أو Cfx.re.</footer>
+<button class="btn" id="cartBtn">🛒 السلة (<span id="cnt">0</span>)</button>
+<div id="modal"><div class="sheet" id="sheet"></div></div>
+<script>
+// ===== إعدادات المتجر: عدّلها حسب سيرفرك =====
+let CFG={name:"",discord:"#",wa:"",cur:"د.ع"};
+let PAY=[];
+const CATS={all:"الكل",vip:"VIP",money:"باقات المال",cars:"السيارات",menu:"المنيو",nick:"نك نيم",skin:"السكنات",house:"المقرات"};
+let ITEMS=[];
+let cat="all",cart=[],step="cart",pm="zain",form={name:"",dc:""},order=null;
+const $=id=>document.getElementById(id),fmt=n=>n.toLocaleString("en-US")+" "+CFG.cur;
+function init(){$("nm").textContent=CFG.name;$("h1").textContent=CFG.name;$("ft").textContent=CFG.name;$("dc1").href=CFG.discord;
+$("payList").innerHTML=PAY.map(p=>`<div class="box"><div class="ic">${p.ic}</div><b>${p.n}</b><p>${p.info.split(":")[0]}</p></div>`).join("");
+function tabs(){$("tabs").innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="tab ${k===cat?"on":""}" data-k="${k}">${v}</button>`).join("");
+ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{cat=b.dataset.k;tabs();grid()})}
+function grid(){$("grid").innerHTML=ITEMS.filter(i=>cat==="all"||i.c===cat).map(i=>{const on=cart.includes(i.id);
+ return `<div class="card">${i.b?`<span class="badge">${i.b}</span>`:""}<div class="ic">${i.ic}</div><h3>${i.n}</h3><p>${i.d}</p><div class="price">${i.t?"فتح تذكرة فقط":fmt(i.p)}</div>`+
+ (i.t?`<a class="btn" href="${CFG.discord}" target="_blank" rel="noopener">افتح تذكرة</a>`:`<button class="btn ${on?"g":""}" data-id="${i.id}">${on?"إزالة من السلة":"أضف للسلة"}</button>`)+`</div>`}).join("");
+ document.querySelectorAll(".card button").forEach(b=>b.onclick=()=>tog(+b.dataset.id))}
+function tog(id){cart=cart.includes(id)?cart.filter(x=>x!==id):[...cart,id];$("cnt").textContent=cart.length;grid();if($("modal").classList.contains("open"))view()}
+const items=()=>cart.map(id=>ITEMS.find(i=>i.id===id)),total=()=>items().reduce((s,i)=>s+i.p,0);
+function keep(){const a=$("pn"),b=$("pd");if(a)form.name=a.value;if(b)form.dc=b.value}
+function view(){keep();const its=items(),S=$("sheet");let h="";
+ if(step==="cart"){h=`<h3>🛒 سلة المشتريات</h3>`+(its.length?its.map(i=>`<div class="row"><span>${i.ic} ${i.n}</span><span>${fmt(i.p)} <button data-r="${i.id}">✕</button></span></div>`).join("")+`<div class="tot"><span>المجموع</span><span>${fmt(total())}</span></div><button class="btn w" id="go">متابعة للدفع</button>`:`<p style="color:var(--muted)">السلة فارغة</p>`)+`<button class="btn g w" id="cl" style="margin-top:8px">إغلاق</button>`}
+ else if(step==="pay"){const p=PAY.find(x=>x.id===pm);h=`<h3>بيانات الطلب والدفع</h3><label>اسم اللاعب داخل السيرفر</label><input id="pn" type="text" value="${form.name.replace(/"/g,"&quot;")}"><label>معرف الديسكورد (Username)</label><input id="pd" type="text" value="${form.dc.replace(/"/g,"&quot;")}"><label>طريقة الدفع</label>`+
+  PAY.map(x=>`<div class="pm ${x.id===pm?"on":""}" data-p="${x.id}"><span>${x.ic}</span><b>${x.n}</b></div>`).join("")+
+  `<div class="info">حوّل <b>${fmt(total())}</b> ثم احتفظ بصورة الإيصال.<br>${p.info}</div><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="tm"> أوافق على القوانين وسياسة عدم الاسترجاع</label><div class="two"><button class="btn g" id="bk">رجوع</button><button class="btn" id="ok" disabled>تأكيد الطلب</button></div>`}
+ else{h=`<h3>✅ تم إنشاء طلبك</h3><p style="margin:0;color:var(--muted)">رقم الطلب: <b style="color:var(--ac)">${order.id}</b>. أرسل نص الطلب مع صورة الإيصال في تذكرة الديسكورد لتفعيل المنتج.</p><pre id="ot"></pre><div class="two"><button class="btn g" id="cp">نسخ الطلب</button><a class="btn" id="dd" target="_blank" rel="noopener">تذكرة ديسكورد</a></div><a class="btn g w" id="wa" target="_blank" rel="noopener" style="margin-top:8px">إرسال عبر واتساب</a><button class="btn g w" id="fin" style="margin-top:8px">إنهاء</button>`}
+ S.innerHTML=h;const q=s=>S.querySelector(s);
+ S.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>tog(+b.dataset.r));
+ if(q("#cl"))q("#cl").onclick=close;if(q("#go"))q("#go").onclick=()=>{step="pay";view()};
+ if(step==="pay"){S.querySelectorAll("[data-p]").forEach(e=>e.onclick=()=>{keep();pm=e.dataset.p;view()});q("#bk").onclick=()=>{keep();step="cart";view()};
+  const chk=()=>{q("#ok").disabled=!(q("#tm").checked&&q("#pn").value.trim()&&q("#pd").value.trim())};["#tm","#pn","#pd"].forEach(s=>q(s).oninput=chk);q("#tm").onchange=chk;chk();
+  q("#ok").onclick=async()=>{keep();q("#ok").disabled=true;let r;try{r=await(await fetch("/api/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.name,dc:form.dc,method:pm,items:cart})})).json()}catch(e){}if(!r||!r.id){q("#ok").disabled=false;alert("تعذر إرسال الطلب، حاول مرة ثانية");return}const id=r.id;const p=PAY.find(x=>x.id===pm);
+   const txt=`طلب ${id} - ${CFG.name}\nاللاعب: ${form.name}\nديسكورد: ${form.dc}\n`+its.map(i=>"• "+i.n+" ("+fmt(i.p)+")").join("\n")+`\nالمجموع: ${fmt(total())}\nطريقة الدفع: ${p.n}`;order={id,txt};step="done";view()}}
+ if(step==="done"){q("#ot").textContent=order.txt;q("#dd").href=CFG.discord;q("#wa").href="https://wa.me/"+CFG.wa+"?text="+encodeURIComponent(order.txt);
+  q("#cp").onclick=async()=>{try{await navigator.clipboard.writeText(order.txt);q("#cp").textContent="تم النسخ ✓"}catch(e){q("#cp").textContent="انسخ يدوياً"}};
+  q("#fin").onclick=()=>{cart=[];step="cart";$("cnt").textContent=0;grid();close()}}}
+function close(){$("modal").classList.remove("open")}
+$("cartBtn").onclick=()=>{if(step==="done")step="cart";view();$("modal").classList.add("open")};
+$("modal").onclick=e=>{if(e.target.id==="modal")close()};
+tabs();grid()}
+fetch("/api/store").then(r=>r.json()).then(d=>{CFG=Object.assign(CFG,d.settings);PAY=d.settings.pay;ITEMS=d.products;init()}).catch(()=>{document.getElementById("grid").textContent="تعذر تحميل المتجر"});
+</script>
+</body>
+</html>
